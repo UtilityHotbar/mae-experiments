@@ -1,0 +1,32 @@
+source ./bin/activate
+python3 main_finetune.py --eval --resume mae_finetuned_vit_large.pth --model vit_large_patch16 --batch_size 16 --data_path imagenet --device cpu --log_dir logs --output_dir output
+
+===
+
+RUN ONE (Error in train/val set setup)
+
+[09:59:08.236779] Test:  [150/305]  eta: 1:32:24  loss: 8.9542 (9.0334)  acc1: 0.0000 (0.0000)  acc5: 0.0000 (0.4967)  time: 75.1478  data: 0.0050
+
+[10:23:10.161585] Test:  [200/305]  eta: 0:59:35  loss: 9.0268 (9.0440)  acc1: 0.0000 (0.0000)  acc5: 0.0000 (0.4664)  time: 33.0658  data: 0.0062
+
+[11:11:47.209440] Test:  [280/305]  eta: 0:14:28  loss: 9.1216 (9.0461)  acc1: 0.0000 (0.0000)  acc5: 0.0000 (0.5560)  time: 63.6281  data: 0.0032
+
+[11:18:46.263497] Test: Total time: 2:49:39 (33.3763 s / it)
+[11:18:46.264981] * Acc@1 0.000 Acc@5 0.513 loss 9.051
+[11:18:46.271911] Accuracy of the network on the 4870 test images: 0.0%
+
+===
+
+RUN TWO (1st proper run)
+
+[13:22:24.619902] Test:  [ 240/3125]  eta: 22:55:41  loss: 0.6456 (0.5709)  acc1: 93.7500 (87.6037)  acc5: 100.0000 (98.4699)  time: 32.2586  data: 0.0068
+
+[15:29:34.035198] Test:  [ 610/3125]  eta: 16:36:25  loss: 0.5730 (0.5204)  acc1: 87.5000 (89.6174)  acc5: 93.7500 (98.4656)  time: 37.6837  data: 0.0078
+
+[20:41:41.776176] Test:  [1570/3125]  eta: 9:08:33  loss: 0.9657 (0.5863)  acc1: 75.0000 (87.6194)  acc5: 93.7500 (98.0347)  time: 22.4378  data: 0.0043
+
+[08:20:00.256727] Test: Total time: 20:52:30 (24.0483 s / it)
+[08:20:00.257022] * Acc@1 85.952 Acc@5 97.564 loss 0.646
+[08:20:00.264327] Accuracy of the network on the 50000 test images: 86.0%
+
+===
